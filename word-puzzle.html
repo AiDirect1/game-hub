@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Puzzle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background: #1e1e2f; color: white; font-family: sans-serif; text-align: center; }
+    input { padding: 10px; margin: 10px; font-size: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>Word Puzzle</h1>
+  <p>Guess the 5-letter word!</p>
+  <input type="text" id="guess" maxlength="5" placeholder="Enter word"/>
+  <button onclick="checkGuess()">Guess</button>
+  <p id="result"></p>
+  <script>
+    const word = "apple";
+    function checkGuess() {
+      const guess = document.getElementById('guess').value.toLowerCase();
+      const result = document.getElementById('result');
+      if (guess === word) result.innerText = "Correct! 🎉";
+      else result.innerText = "Try again! ❌";
+    }
+  </script>
+</body>
+</html>
